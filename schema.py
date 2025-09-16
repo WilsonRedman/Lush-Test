@@ -66,7 +66,7 @@ class Query:
             if tasks:
                 return tasks
             else:
-                raise GraphQLError("No incomplete tasks found")
+                return None
             
     @strawberry.field     
     def recently_completed_tasks(self) -> typing.Optional[typing.List[Task]] | None:
@@ -89,7 +89,7 @@ class Query:
             if tasks:
                 return tasks
             else:
-                raise GraphQLError("No completed tasks found")
+                return None
             
             
             
