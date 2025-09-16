@@ -10,8 +10,8 @@ task_table = Table(
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("title", String, nullable=False),
     Column("completed", Boolean, default=False),
-    Column("created_at", DateTime, default=func.now(), nullable=False),
-    Column("updated_at", DateTime, default=func.now(), onupdate=func.now(), nullable=False)
+    Column("created_at", DateTime, server_default=func.now(), nullable=False),
+    Column("updated_at", DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 )
 
 metadata.create_all(engine)
